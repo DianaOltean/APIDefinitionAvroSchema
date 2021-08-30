@@ -1,0 +1,102 @@
+{
+  "doc": "For checking implementation of kafka with extended type support",
+  "fields": [
+    {
+      "default": false,
+      "doc": "optional field",
+      "name": "boolean_field",
+      "type": "boolean"
+    },
+    {
+      "default": 123456,
+      "name": "int_field",
+      "type": "int"
+    },
+    {
+      "name": "long_field",
+      "type": "long"
+    },
+    {
+      "name": "float_field",
+      "type": "float"
+    },
+    {
+      "name": "double_field",
+      "type": "double"
+    },
+    {
+      "name": "bytes_field",
+      "type": "bytes"
+    },
+    {
+      "name": "string_field",
+      "type": "string"
+    },
+    {
+      "name": "enumValue",
+      "type": {
+        "name": "enumType",
+        "symbols": [
+          "opel",
+          "mazda",
+          "bmw",
+          "nissan"
+        ],
+        "type": "enum"
+      }
+    },
+    {
+      "name": "child_type_value",
+      "type": {
+        "fields": [
+          {
+            "name": "child_type_string",
+            "type": "string"
+          }
+        ],
+        "name": "child_type_type",
+        "type": "record"
+      }
+    },
+    {
+      "name": "array_string_name",
+      "type": {
+        "items": "string",
+        "type": "array"
+      }
+    },
+    {
+      "name": "array_long_field_name",
+      "type": {
+        "items": "long",
+        "type": "array"
+      }
+    },
+    {
+      "name": "map_int_field_name",
+      "type": {
+        "type": "map",
+        "values": "int"
+      }
+    },
+    {
+      "name": "fixed_field_name",
+      "type": {
+        "name": "fixed_field",
+        "size": 10,
+        "type": "fixed"
+      }
+    },
+    {
+      "default": null,
+      "name": "next",
+      "type": [
+        "null",
+        "schema"
+      ]
+    }
+  ],
+  "name": "schema",
+  "namespace": "advanced.test",
+  "type": "record"
+}
