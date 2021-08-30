@@ -1,0 +1,29 @@
+asyncapi: 2.0.0
+id: urn:com:kafka:server
+info:
+  title: Kafka Application
+  version: 1.0.0
+  description: Kafka Application
+servers:
+  production:
+    url: ubuntuserverlts:9092
+    description: Development server
+    protocol: kafka-secure
+    protocolVersion: 1.0.0
+channels:
+  TestChannelTopic:
+    description: A test channel or topic
+    subscribe:
+      message:
+        "$ref": "#/components/messages/message"
+    publish:
+      message:
+        "$ref": "#/components/messages/message"
+components:
+  messages:
+    message:
+      name: message
+      contentType: application/json
+      schemaFormat: application/vnd.apache.avro;version=1.9.0
+      payload:
+        "$ref": "https://github.com/SmartBearTester/APIDefinitionAvroSchema/blob/main/Test/schema.avsc"
