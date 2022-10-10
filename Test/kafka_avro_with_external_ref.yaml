@@ -6,7 +6,7 @@ info:
   description: Kafka Application
 servers:
   production:
-    url: ubuntuserverlts:9092
+    url: rapis02.localhost.local:9092
     description: Development server
     protocol: kafka-secure
     protocolVersion: 1.0.0
